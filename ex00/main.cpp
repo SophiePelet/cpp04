@@ -6,7 +6,7 @@
 /*   By: sophie <sophie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 23:02:39 by sophie            #+#    #+#             */
-/*   Updated: 2026/07/08 09:49:44 by sophie           ###   ########.fr       */
+/*   Updated: 2026/07/08 09:54:21 by sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ int main()
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
+
+	delete(i);
+	delete(j);
+	delete(meta);
 
 	return (0);
 }
