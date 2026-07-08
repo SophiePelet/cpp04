@@ -6,7 +6,7 @@
 /*   By: sophie <sophie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 22:12:35 by sophie            #+#    #+#             */
-/*   Updated: 2026/07/07 23:17:43 by sophie           ###   ########.fr       */
+/*   Updated: 2026/07/08 09:47:10 by sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,4 @@ Dog::~Dog() { std::cout << "Dog destructor called\n"; }
 
 // member function
 
-void	Dog::makeSound() const { std::cout << "Meow\n"; }
+void	Dog::makeSound() const { std::cout << "Woof\n"; }
