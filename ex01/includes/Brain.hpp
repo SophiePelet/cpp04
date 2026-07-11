@@ -6,7 +6,7 @@
 /*   By: sophie <sophie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 10:04:59 by sophie            #+#    #+#             */
-/*   Updated: 2026/07/10 17:40:59 by sophie           ###   ########.fr       */
+/*   Updated: 2026/07/11 21:27:55 by sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 #include <iostream>
 #include <string>
+
+#define RED			"\033[31m"
+#define YELLOW		"\033[33m"
+#define BLUE		"\033[34m"
+#define GREEN		"\033[32m"
+#define RESET		"\033[0m"
+#define BOLDMAGENTA "\033[1m\033[35m"
 
 class	Brain {
 	public :

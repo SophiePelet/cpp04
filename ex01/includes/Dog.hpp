@@ -6,7 +6,7 @@
 /*   By: sophie <sophie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 22:04:20 by sophie            #+#    #+#             */
-/*   Updated: 2026/07/11 16:56:19 by sophie           ###   ########.fr       */
+/*   Updated: 2026/07/11 21:04:39 by sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class	Dog : public Animal {
 	~Dog();
 	
 	void	makeSound() const;
+	const std::string&	getIdea(size_t index) const;
+	void				setIdea(size_t index, const std::string idea);
 
 	private :
 

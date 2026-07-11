@@ -6,7 +6,7 @@
 /*   By: sophie <sophie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/10 17:08:20 by sophie            #+#    #+#             */
-/*   Updated: 2026/07/11 16:48:06 by sophie           ###   ########.fr       */
+/*   Updated: 2026/07/11 20:36:56 by sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 // Constructor/destructor, copy constructor and copy assignment operator
 
-Brain::Brain() { std::cout << "Brain constructor called\n"; }
+Brain::Brain() { std::cout << RED << "Brain" << RESET << " constructor called\n"; }
 Brain::Brain(const Brain &other) {
-	std::cout << "Brain copy constructor called\n";
+	std::cout << RED << "Brain" << RESET << " copy constructor called\n";
 	for (size_t i = 0; i < 100; ++i)
 		this->_ideas[i] = other._ideas[i];
 }
 Brain &Brain::operator=(const Brain &other) {
-	std::cout << "Brain copy assignment operator called\n";
+	std::cout << RED << "Brain" << RESET << " copy assignment operator called\n";
 	if (this != &other) {
 		for (size_t i = 0; i < 100; ++i) {
 				this->_ideas[i] = other._ideas[i];
@@ -29,7 +29,7 @@ Brain &Brain::operator=(const Brain &other) {
 	}
 	return (*this);
 }
-Brain::~Brain() { std::cout << "Brain destrcutor called\n"; }
+Brain::~Brain() { std::cout << RED << "Brain" << RESET << " destructor called\n"; }
 
 
 // Member functions
