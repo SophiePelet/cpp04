@@ -6,7 +6,7 @@
 /*   By: sophie <sophie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 22:04:20 by sophie            #+#    #+#             */
-/*   Updated: 2026/07/07 23:08:18 by sophie           ###   ########.fr       */
+/*   Updated: 2026/07/11 16:56:19 by sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class	Dog : public Animal {
 	public :
@@ -24,6 +25,10 @@ class	Dog : public Animal {
 	~Dog();
 	
 	void	makeSound() const;
+
+	private :
+
+	Brain* _brain;
 };
 
 #endif

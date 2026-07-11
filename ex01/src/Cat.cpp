@@ -6,17 +6,19 @@
 /*   By: sophie <sophie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 22:12:35 by sophie            #+#    #+#             */
-/*   Updated: 2026/07/07 23:17:10 by sophie           ###   ########.fr       */
+/*   Updated: 2026/07/11 16:55:11 by sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 // Constructor/destructor, copy constructor and copy assignment operator
 
 Cat::Cat() : Animal() { 
 	std::cout << "Cat constructor called\n";
 	this->_type = "Cat";
+	_brain = new Brain();
 }
 Cat::Cat (const Cat &other) : Animal() {
 	std::cout << "Cat copy constructor called\n";
@@ -28,7 +30,10 @@ Cat &Cat::operator=(const Cat &other) {
 		this->_type = other._type;
 	return (*this);
 }
-Cat::~Cat() { std::cout << "Cat destructor called\n"; }
+Cat::~Cat() {
+	std::cout << "Cat destructor called\n";
+	delete _brain;
+}
 
 // member function
 
