@@ -6,7 +6,7 @@
 /*   By: sophie <sophie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 16:35:45 by sophie            #+#    #+#             */
-/*   Updated: 2026/07/11 21:26:36 by sophie           ###   ########.fr       */
+/*   Updated: 2026/07/12 20:56:08 by sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ int main()
 			array[i] = new Cat();
 	}
 	
+	std::cout << array[1]->getType() << std::endl;
 	array[1]->makeSound();
+	std::cout << array[4]->getType() << std::endl;
 	array[4]->makeSound();
 
 	for (size_t i = 0; i < 5; ++i)
