@@ -6,7 +6,7 @@
 /*   By: sopelet <sopelet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 12:43:32 by sopelet           #+#    #+#             */
-/*   Updated: 2026/07/16 18:34:04 by sopelet          ###   ########.fr       */
+/*   Updated: 2026/07/21 14:18:18 by sopelet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void    MateriaSource::learnMateria(AMateria* knowledge) {
 AMateria	*MateriaSource::createMateria(std::string const &type) {
 	for (size_t i = 0; i < 4; ++i) {
 		if (this->_type[i] && this->_type[i]->getType() == type) {
-			return (this->_type[i]); 
+			return (this->_type[i]->clone()); 
 		}
 	}
 	return (NULL);
