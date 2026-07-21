@@ -25,7 +25,7 @@ Character::Character(std::string const &name) : _name(name) {
 }
 Character::Character(const Character &other) : _name(other._name){
 	for (size_t i = 0; i < 4; ++i) {
-		if (_inventory[i] != NULL)
+		if (other._inventory[i] != NULL)
 			this->_inventory[i] = other._inventory[i]->clone();
 		else
 			this->_inventory[i] = NULL;
@@ -55,7 +55,14 @@ Character &Character::operator=(const Character &other) {
 	}
 	return (*this);
 }
-Character::~Character() {}
+Character::~Character() {
+	for (size_t i = 0; i < 4; ++i) {
+        if (this->_inventory[i] != NULL) {
+            delete this->_inventory[i];
+            this->_inventory[i] = NULL;
+		}
+	}
+}
 
 /* Member functions */
 
