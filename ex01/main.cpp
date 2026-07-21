@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sophie <sophie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sopelet <sopelet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 16:35:45 by sophie            #+#    #+#             */
-/*   Updated: 2026/07/12 21:30:15 by sophie           ###   ########.fr       */
+/*   Updated: 2026/07/16 19:11:53 by sopelet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int main()
 {
-	std::cout << BOLDMAGENTA << "Testing constructor, copy constructor\n" << RESET;
+	std::cout << BOLDMAGENTA << "/* ------------ Testing constructor, copy constructor ------------ */\n" << RESET;
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
@@ -30,7 +30,7 @@ int main()
 	Dog dogA;
 	Dog dogB(dogA);
 	
-	std::cout << BOLDMAGENTA << "Creating and deleting the array of Animal objects\n" << RESET;
+	std::cout << BOLDMAGENTA << "/* ------ Creating and deleting the array of Animal objects ------ */\n" << RESET;
 	Animal* array[5];
 	for (size_t i = 0; i < 5; ++i) {
 		if (i < 2)
@@ -47,7 +47,7 @@ int main()
 	for (size_t i = 0; i < 5; ++i)
 		delete array[i];
 	
-	std::cout << BOLDMAGENTA << "Deep copies test\n" << RESET;
+	std::cout << BOLDMAGENTA << "/* ------------------------ Deep copies test ---------------------- */\n" << RESET;
 	Cat catA;
 	Cat catB;
 	catA = catA;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sophie <sophie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sopelet <sopelet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/11 16:35:45 by sophie            #+#    #+#             */
-/*   Updated: 2026/07/12 21:35:50 by sophie           ###   ########.fr       */
+/*   Updated: 2026/07/16 19:10:34 by sopelet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int main()
 {
-	std::cout << BOLDMAGENTA << "Testing constructor, copy constructor\n" << RESET;
+	std::cout << BOLDMAGENTA << "/* ------------ Testing constructor, copy constructor ------------ */\n" << RESET;
 	const AAnimal* j = new Dog();
 	const AAnimal* i = new Cat();
 	
@@ -25,7 +25,7 @@ int main()
 	Dog dogA;
 	Dog dogB(dogA);
 	
-	std::cout << BOLDMAGENTA << "Creating and deleting the array of Animal objects\n" << RESET;
+	std::cout << BOLDMAGENTA << "/* ------ Creating and deleting the array of Animal objects ------ */\n" << RESET;
 	AAnimal* array[5];
 	for (size_t i = 0; i < 5; ++i) {
 		if (i < 2)
@@ -43,14 +43,14 @@ int main()
 		delete array[i];
 
 
-	//std::cout << BOLDMAGENTA << "Testing AAnimal instantiation\n" << RESET;
+	//Test AAnimal instantiation
 	//const AAnimal* abstract = new AAnimal;
 	
-	std::cout << BOLDMAGENTA << "Testing makeSound() in Cat and Dog\n" << RESET;
+	std::cout << BOLDMAGENTA << "/* -------------- Testing makeSound() in Cat and Dog -------------- */\n" << RESET;
 	i->makeSound();
 	j->makeSound();
 	
-	std::cout << BOLDMAGENTA << "Deep copies test\n" << RESET;
+	std::cout << BOLDMAGENTA << "/* ------------------------ Deep copies test ---------------------- */\n" << RESET;
 	Cat catA;
 	Cat catB;
 	catA.setIdea(0, "Bite my owner's ankles\n");
