@@ -6,7 +6,7 @@
 /*   By: sopelet <sopelet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 12:05:28 by sopelet           #+#    #+#             */
-/*   Updated: 2026/07/21 17:33:12 by sopelet          ###   ########.fr       */
+/*   Updated: 2026/07/22 15:02:59 by sopelet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ int main()
     // Copy Assignment Operator
     std::cout << CYAN << "Creating 'copyAssign' using copy assignment operator\n" << RESET;
     Character* copyAssign = new Character("Temp");
-    copyAssign->equip(src->createMateria("ice"));
+    *copyAssign = *original;
 
     // Alter `original` that they aren't dependent
-    std::cout << "Altering 'original' (equipping slot 2)\n";
+    std::cout << CYAN << "Altering 'original' (equipping slot 2)\n" << RESET;
     original->equip(src->createMateria("ice"));
 
     std::cout << CYAN << "\nTesting clones' independence\n" << RESET;
