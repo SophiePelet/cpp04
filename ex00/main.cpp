@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sophie <sophie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sopelet <sopelet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 23:02:39 by sophie            #+#    #+#             */
-/*   Updated: 2026/07/09 10:36:28 by sophie           ###   ########.fr       */
+/*   Updated: 2026/07/22 14:47:01 by sopelet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main()
 	const Animal* 		medor = new Dog();
 	const Animal* 		moulinette = new Cat();
 	const WrongAnimal*	wrong = new WrongCat();
+	const WrongCat*		trueWrong = new WrongCat();
 
 	std::cout << "Medor is a: " << YELLOW << medor->getType()
 		<< " " << RESET << std::endl;
@@ -42,11 +43,14 @@ int main()
 	meta->makeSound();
 	std::cout << RED << "Wrong cat " << RESET << "goes: ";
 	wrong->makeSound();
+	std::cout << RED << "True wrong cat " << RESET << "goes: ";
+	trueWrong->makeSound();
 
 	delete(meta);
 	delete(medor);
 	delete(moulinette);
 	delete(wrong);
+	delete(trueWrong);
 
 	return (0);
 }
