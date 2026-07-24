@@ -10,19 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Colors.hpp"
 #include "Character.hpp"
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
-
-#define RED			"\033[31m"
-#define YELLOW		"\033[33m"
-#define BLUE		"\033[34m"
-#define CYAN    	"\033[36m"
-#define GREEN		"\033[32m"
-#define RESET		"\033[0m"
-#define BOLDCYAN	"\033[1m\033[36m"
-#define BOLDMAGENTA "\033[1m\033[35m"
 
 int main()
 {
