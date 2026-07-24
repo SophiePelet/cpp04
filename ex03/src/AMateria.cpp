@@ -10,21 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+
+#include "Colors.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
 
 /* Constructor/destructor, copy constructor and copy assignment operator */
 
-AMateria::AMateria() : _type("default") {}
-AMateria::AMateria(std::string const &type) : _type(type) {}
+AMateria::AMateria() : _type("default") {
+	std::cout << GREEN << "AMateria constructor called" << RESET << std::endl;
+}
+AMateria::AMateria(std::string const &type) : _type(type) {
+	std::cout << GREEN << "AMateria constructor called" << RESET << std::endl;
+}
 AMateria::AMateria(const AMateria &other) {
 	this->_type = other._type;
+	std::cout << BLUE << "AMateria copy constructor called" << RESET << std::endl;
 }
 AMateria &AMateria::operator=(const AMateria &other) {
-	(void)other;
+	std::cout << YELLOW << "AMateria copy assignment operator called" << RESET << std::endl;
+	if (this != &other)
+		this->_type = other._type;
 	return (*this);
 }
-AMateria::~AMateria() {}
+AMateria::~AMateria() {
+	std::cout << RED << "AMateria destructor called" << RESET << std::endl;
+}
 
 /* Member functions */
 

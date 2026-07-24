@@ -12,16 +12,27 @@
 
 #include "Ice.hpp"
 
+#include <iostream>
+
+#include "Colors.hpp"
+
 /* Constructor/destructor, copy constructor and copy assignment operator */
 
-Ice::Ice() : AMateria("ice") {}
-Ice::Ice(const Ice &other) : AMateria(other) {}
+Ice::Ice() : AMateria("ice") {
+	std::cout << GREEN << "Ice constructor called" << RESET << std::endl;
+}
+Ice::Ice(const Ice &other) : AMateria(other) {
+	std::cout << BLUE << "Ice copy constructor called" << RESET << std::endl;
+}
 Ice &Ice::operator=(const Ice &other) {
+	std::cout << YELLOW << "Ice copy assignment operator called" << RESET << std::endl;
 	if (this != &other)
 		AMateria::operator=(other);
 	return (*this);
 }
-Ice::~Ice() {}
+Ice::~Ice() {
+	std::cout << RED << "Ice destructor called" << RESET << std::endl;
+}
 
 /* Member functions */
 

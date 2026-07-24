@@ -21,6 +21,7 @@
 #define CYAN    	"\033[36m"
 #define GREEN		"\033[32m"
 #define RESET		"\033[0m"
+#define BOLDCYAN	"\033[1m\033[36m"
 #define BOLDMAGENTA "\033[1m\033[35m"
 
 int main()
@@ -51,19 +52,19 @@ int main()
     original->equip(src->createMateria("cure"));
 
     // Copy Constructor
-    std::cout << CYAN << "Creating 'copyCon' via the copy constructor\n" << RESET;
+    std::cout << BOLDCYAN << "/* >>> Creating 'copyCon' via the copy constructor <<< */\n" << RESET;
     Character* copyCon = new Character(*original);
 
     // Copy Assignment Operator
-    std::cout << CYAN << "Creating 'copyAssign' using copy assignment operator\n" << RESET;
+    std::cout << BOLDCYAN << "/* >>> Creating 'copyAssign' using copy assignment operator <<< */\n" << RESET;
     Character* copyAssign = new Character("Temp");
     *copyAssign = *original;
 
     // Alter `original` that they aren't dependent
-    std::cout << CYAN << "Altering 'original' (equipping slot 2)\n" << RESET;
+    std::cout << BOLDCYAN << "/* >>> Altering 'original' (equipping slot 2) <<< */\n" << RESET;
     original->equip(src->createMateria("ice"));
 
-    std::cout << CYAN << "\nTesting clones' independence\n" << RESET;
+    std::cout << BOLDCYAN << "\n/* >>> Testing clones' independence <<< */\n" << RESET;
     std::cout << "copyCon slot 2 (should do nothing): \n";
     copyCon->use(2, *bob); 
     std::cout << "copyAssign slot 2 (should do nothing): \n";
@@ -79,12 +80,12 @@ int main()
 
     ICharacter* testLimits = new Character("Boundary Tester");
     
-    std::cout << CYAN << "Testing invalid indices for use()\n" << RESET;
+    std::cout << BOLDCYAN << "/* >>> Testing invalid indices for use() <<< */\n" << RESET;
     testLimits->use(-1, *bob);
     testLimits->use(4, *bob);
     testLimits->use(42, *bob);
 
-    std::cout << CYAN << "Testing inventory overflow\n" << RESET;
+    std::cout << BOLDCYAN << "/* >>> Testing inventory overflow <<< */\n" << RESET;
     for (int i = 0; i < 5; i++) {
         tmp = src->createMateria("ice");
         testLimits->equip(tmp);
@@ -106,7 +107,7 @@ int main()
     unequipTester->equip(leftover);
     unequipTester->unequip(0); 
 
-    std::cout << "Slot 0 after unequip: (nothing)";
+    std::cout << "Slot 0 after unequip: (nothing)" << std::endl;
     unequipTester->use(0, *bob);
 
     delete leftover;

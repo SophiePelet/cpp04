@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "Colors.hpp"
 #include "Cure.hpp"
 #include "Ice.hpp"
 
@@ -18,10 +19,12 @@
 Character::Character() : _name("default") {
 	for (size_t i = 0; i < 4; ++i)
 		_inventory[i] = NULL;
+	std::cout << GREEN << "Character constructor called" << RESET << std::endl;
 }
 Character::Character(std::string const &name) : _name(name) {
 	for (size_t i = 0; i < 4; ++i)
 		_inventory[i] = NULL;
+	std::cout << GREEN << "Character constructor called" << RESET << std::endl;
 }
 Character::Character(const Character &other) : _name(other._name){
 	for (size_t i = 0; i < 4; ++i) {
@@ -30,6 +33,7 @@ Character::Character(const Character &other) : _name(other._name){
 		else
 			this->_inventory[i] = NULL;
 	}
+	std::cout << BLUE << "Character copy constructor called" << RESET << std::endl;
 }
 /*
 	Delete the pointers of the other object to avoid danglinng pointers and
@@ -37,6 +41,7 @@ Character::Character(const Character &other) : _name(other._name){
 	Copy the content of the inventory to the other object
 */
 Character &Character::operator=(const Character &other) {
+	std::cout << YELLOW << "Character copy assignment operator called" << RESET << std::endl;
 	if (this != &other) {
 		this->_name = other._name;
 
@@ -62,6 +67,7 @@ Character::~Character() {
             this->_inventory[i] = NULL;
 		}
 	}
+	std::cout << RED << "Character destructor called" << RESET << std::endl;
 }
 
 /* Member functions */
