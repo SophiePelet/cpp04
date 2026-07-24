@@ -60,7 +60,7 @@ int main()
     Character* copyAssign = new Character("Temp");
     *copyAssign = *original;
 
-    // Alter `original` that they aren't dependent
+    // Alter `original` to prove that they aren't dependent
     std::cout << BOLDCYAN << "/* >>> Altering 'original' (equipping slot 2) <<< */\n" << RESET;
     original->equip(src->createMateria("ice"));
 
